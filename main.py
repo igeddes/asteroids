@@ -1,5 +1,6 @@
 import pygame
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, MAX_FPS
+from player import Player
 
 def main():
     print("Starting asteroids!")
@@ -8,8 +9,10 @@ def main():
 
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    my_player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
     while True:
         pygame.Surface.fill(screen, (0,0,0))
+        my_player.draw(screen)
         dt = 0.0
         clock = pygame.time.Clock()
         pygame.display.flip()
