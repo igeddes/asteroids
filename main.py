@@ -12,14 +12,14 @@ def main():
     my_player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
     while True:
         pygame.Surface.fill(screen, (0,0,0))
-        my_player.draw(screen)
-        dt = 0.0
         clock = pygame.time.Clock()
+        
+        my_player.draw(screen)
         pygame.display.flip()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        dt = clock.tick(MAX_FPS)/1000
+        my_player.update(clock.tick(MAX_FPS)/1000)
             
 if __name__ == "__main__":
     main()
